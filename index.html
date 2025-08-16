@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AeroDesk Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="egyptair-logo.png" alt="EgyptAir Logo" class="logo" />
+    <h1>AeroDesk Chatbot</h1>
+  </header>
+
+  <main class="content">
+    <section class="section about-section">
+      <h2>About EgyptAir IT Sector</h2>
+      <p>
+        At EgyptAir’s Information Technology Sector, we power the airline’s operations with cutting-edge solutions.
+        From seamless booking systems to in-flight connectivity, our team ensures a smooth digital journey for every traveler.
+      </p>
+    </section>
+
+    <section class="section help-desk-section">
+      <h2>Help Desk Support</h2>
+      <p>
+        Our dedicated Help Desk team, supported by our smart assistant AeroDesk, is available 24/7 to resolve your
+        technical issues with efficiency and care. Whether it’s a system glitch or a connectivity problem, AeroDesk and
+        our team are here to keep you on track.
+      </p>
+    </section>
+
+    <section class="chatbot-section">
+      <h2>Meet AeroDesk, Your Digital Wingman</h2>
+      <p>
+        Got a technical issue? Chat with AeroDesk for instant solutions. If you need further help, contact our Help Desk
+        at: <a href="tel:+123456789012">12345</a>.
+      </p>
+      <!-- Chatbot container -->
+      <div id="webchat" style="width: 100%; height: 550px;"></div>
+    </section>
+  </main>
+
+  <!-- Botpress scripts placed at end of body -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log("DOMContentLoaded fired");
+
+      if (window.botpress) {
+        console.log("Botpress object found, initializing...");
+
+        window.botpress.init({
+          botId: "60e3215a-5965-4c4f-9874-e317e933662e",
+          clientId: "36d7a9d6-5d1f-413a-9537-72630fbf4aa3",
+          selector: "#webchat",
+          configuration: {
+            version: "v1",
+            botName: "AeroDesk Chatbot",
+            botAvatar: "https://files.bpcontent.cloud/2025/08/04/14/20250804145534-FBO0DS14.png",
+            botDescription:
+              "يمكنني مساعدتك في استكشاف أخطاء أجهزتك وإصلاحها، وحل المشكلات التقنية الشائعة، وإرشادك خطوة بخطوة باللغتين الإنجليزية والعربية",
+            fabImage: "https://files.bpcontent.cloud/2025/08/04/14/20250804145123-A5IL3KYG.png",
+            website: {
+              title: "https://www.egyptair.com/en/Pages/HomePage.aspx",
+              link: "https://www.egyptair.com/en/Pages/HomePage.aspx",
+            },
+            email: {
+              title: "support@egyptair.com",
+              link: "support@egyptair.com",
+            },
+            phone: {
+              title: "12345",
+              link: "12345",
+            },
+            termsOfService: {
+              title: "Terms of service",
+              link: "https://www.egyptair.com/en/Pages/website-terms-conditions.aspx",
+            },
+            privacyPolicy: {
+              title: "Privacy policy",
+              link: "https://www.egyptair.com/en/Pages/PrivacyPolicy.aspx",
+            },
+            color: "#3276EA",
+            variant: "solid",
+            headerVariant: "glass",
+            themeMode: "dark",
+            fontFamily: "inter",
+            radius: 4,
+            feedbackEnabled: true,
+            footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+            allowFileUpload: false,
+            storageLocation: "localStorage",
+          },
+        });
+
+        // Listen for webchat:ready event and open chatbot automatically
+        window.botpress.on("webchat:ready", () => {
+          console.log("Botpress webchat is ready, opening chat...");
+          window.botpress.open();
+        });
+      } else {
+        console.error("Botpress object NOT found. Ensure inject.js is loaded and internet is connected.");
+      }
+    });
+  </script>
+</body>
+</html>

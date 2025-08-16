@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('egyptair-plane.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, rgba(0, 48, 135, 0.9), rgba(0, 48, 135, 0.5));
+    width: 100%;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    display: grid;
+    gap: 30px;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+    padding: 20px;
+    border-left: 4px solid #00b7eb;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #00b7eb; /* EgyptAir accent color */
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.chatbot-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.chatbot-btn {
+    background-color: #003087; /* EgyptAir blue */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px 0;
+}
+
+.chatbot-btn:hover {
+    background-color: #00b7eb;
+    transform: scale(1.05);
+}
+
+.chatbot-container {
+    max-width: 600px;
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+}
+
+.chatbot-container.hidden {
+    display: none;
+    opacity: 0;
+}
+
+a {
+    color: #00b7eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
